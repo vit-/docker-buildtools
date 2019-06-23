@@ -2,16 +2,17 @@ FROM docker:stable
 MAINTAINER Vitalii Vokhmin
 
 RUN apk add --no-cache \
+  python3 \
+  python3-dev \
   git \
   py-pip \
   make \
-  python-dev \
   libffi-dev \
   openssl-dev \
   gcc \
   libc-dev
 
-RUN pip install \
+RUN pip3 install \
   docker-compose \
   bumpversion
 
