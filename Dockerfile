@@ -20,4 +20,6 @@ RUN wget -O /tmp/helm.tar.gz https://get.helm.sh/helm-v3.4.1-linux-amd64.tar.gz 
   tar -C /tmp -xvf /tmp/helm.tar.gz && \
   mv /tmp/linux-amd64/helm /bin/ && \
   rm -rf /tmp/*
-RUN helm repo add bitnami https://charts.bitnami.com/bitnami
+ADD https://storage.googleapis.com/kubernetes-release/release/v1.20.0/bin/linux/amd64/kubectl /bin/
+RUN chmod +x /bin/kubectl
+
