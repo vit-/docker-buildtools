@@ -1,4 +1,4 @@
-FROM docker:stable
+FROM docker
 MAINTAINER Vitalii Vokhmin
 
 RUN apk add --no-cache \
@@ -13,7 +13,8 @@ RUN apk add --no-cache \
   libc-dev
 
 RUN pip3 install \
-  bumpversion
+  bumpversion \
+  pre-commit
 
 RUN wget -O /tmp/helm.tar.gz https://get.helm.sh/helm-v3.12.0-linux-amd64.tar.gz && \
   tar -C /tmp -xvf /tmp/helm.tar.gz && \
